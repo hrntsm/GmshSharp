@@ -1,0 +1,19 @@
+[package]
+name = "gmsh_csbind"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bindgen = "0.70"
+csbindgen = "1.9"
+
+[build-dependencies]
+bindgen = "0.70"
+
+[[bin]]
+name = "generate_bindings"
+path = "tools/bindings/generate_bindings.rs"
+
+[[bin]]
+name = "generate_csharp_bindings"
+path = "tools/bindings/generate_csharp_bindings.rs"

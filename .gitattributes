@@ -1,0 +1,31 @@
+# .gitattributes for GmshSharp
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# C# source files
+*.cs text diff=csharp
+
+# Solution and project files
+*.sln text
+gitattributes
+*.csproj text
+
+# Markdown
+*.md text
+
+# Ignore native libraries from diff
+
+# Use Git LFS for large binary files
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.so filter=lfs diff=lfs merge=lfs -text
+
+# Ignore generated files
+*.exe binary
+*.obj binary
+*.bin binary
+*.cache binary
+*.nuget binary
+
+# Treat header files as text
+*.h text

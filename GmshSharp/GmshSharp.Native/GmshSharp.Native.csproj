@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PackageId>GmshSharp.Native</PackageId>
+    <Version>4.14.1</Version>
+    <Authors>Your Name</Authors>
+    <Description>C# bindings for Gmsh mesh generation library</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="../../native-libs/gmsh_lib/gmsh-4.14.dll">
+      <Link>runtimes/win-x64/native/gmsh.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes/win-x64/native/gmsh.dll</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+    <Content Include="../../native-libs/gmsh_lib/libgmsh.4.14.dylib">
+      <Link>runtimes/osx-x64/native/libgmsh.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes/osx-x64/native/libgmsh.dylib</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+    <Content Include="../../native-libs/gmsh_lib/libgmsh.4.14.dylib">
+      <Link>runtimes/osx-arm64/native/libgmsh.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes/osx-arm64/native/libgmsh.dylib</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
