@@ -1,3 +1,5 @@
+using System;
+
 using GmshSharp.Native;
 
 namespace GmshSharp
